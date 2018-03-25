@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 
+app.use(express.static(__dirname+'/views'));
 
 app.get('/api/query',function(req,res){
   res.json(req.query);
@@ -9,17 +10,13 @@ app.get('/api/query',function(req,res){
 
 app.set('view engine','ejs');
 
-app.get('/about/:name',function(req,res){
+app.get('/about',function(req,res){
     res.render('about',{
       name:req.query.name
     });
 });
 
-app.get('/about',function(req,res){
-    res.render('about',{
-      name:"there"
-    });
-});
+
 
 
 
