@@ -1,0 +1,19 @@
+{
+  "name": "week1",
+  "version": "1.0.0",
+  "description": "week1 for st2de ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ST2DE/wee1-homework-stu26757451251.git"
+  },
+  "author": "S0522001",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ST2DE/wee1-homework-stu26757451251/issues"
+  },
+  "homepage": "https://github.com/ST2DE/wee1-homework-stu26757451251#readme"
+}

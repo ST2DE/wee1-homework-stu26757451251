@@ -21,21 +21,10 @@ NPM 的起手式:
      
  Git 基本操作:
    
-    $ git --version # 檢查是否有安裝 git
-
-    $ git clone https://github.com/ST2DE/express-starter-XXXXXX.git # 下載 git 專案
-
-    $ cd express-starter-XXXXXX # 進入專案資料夾
-
-    $ npm install # 安裝套件
-
-    $ npm start # 試著執行，但是發生錯誤...
-
     $ touch hello.txt 可以在當前目錄下添加檔案
 
     git 新手教學
     https://hellolynn.hpd.io/2017/01/18/git新手入門教學-part-1/
-    
     
     Step:
 
@@ -47,18 +36,19 @@ NPM 的起手式:
 
     $ git config --list  /* 查看 git 設定內容 */!
 
-
     git clone     
 
     clone下來別人的專案到local端
 
     git init  
 
-    創建一個新的Repository   (打開任何一個專案資料夾打上git init)
+    創建一個新的Repository   (打開任何一個專案資料夾打上git init 會產生一個隱藏的.git資料夾)
 
     add add   主檔名.副檔名     
 
     將檔案提交入Staging Areagit add   整個資料夾提交入Staging Area
+    
+    (git add . 把所有更改過的東西都儲存起來)
 
     git commit   -m   '一行解說文字'  
 
@@ -80,11 +70,6 @@ NPM 的起手式:
 
     查看目前所有commit的歷史紀錄
 
-
-    git log 
-
-    列出所有commit的歷史紀錄
-
     git diff 
 
     比較文件或commit間修改的差異
@@ -93,7 +78,28 @@ NPM 的起手式:
 
     詳細列出該次commit的修改內容
 
-    git status 
-
-    列出目前的檔案狀態
+    git stash [apply/pop/list]
+    
+    暫存用
+    
+    git checkout (-b) 'abc'
+    
+    新增新的分支(下 -b 可以新增的同時並且切換)
+    (git checkout 也可以取消文件的修改 ex. git checkout read,md )
+    
+    git merge develop (截一次跟別人之間有衝突的地方)
+    不管兩個之間做了什麼只做了最新紀錄的比對
+    
+    不管你做了什麼 只要做 rebase 的時候 就做一次做一次打招呼的動作問有你有沒有更新
+    差異:
+    merge: 會有一個切點
+    rebase: branch 會直接接在主 branch 之後 
+    (網址連接 : https://www.slideshare.net/WillHuangTW/git-merge-rebase)
+    
+    .gitignore 
+    
+    //用法可參照 : https://zlargon.gitbooks.io/git-tutorial/content/file/ignore.html
+    
+    
+    
  
