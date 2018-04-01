@@ -11,7 +11,7 @@ app.get('/api/query',function(req,res){
 app.set('view engine','ejs');
 
 app.get('/about',function(req,res){
-    res.render('about',{
+    res.render('home',{
       name:req.query.name
     });
 });
