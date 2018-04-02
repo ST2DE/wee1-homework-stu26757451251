@@ -14,3 +14,5 @@ Status: 回傳的狀態
 time:　時間
 在 Body 部分，也可以調整回傳結果的格式 for instance: XML,json,HTML...etc
 
+=> 建議要用幾張圖，來說明怎麼操作
+=> 至少要解釋怎麼用到「GET」/「POST」
