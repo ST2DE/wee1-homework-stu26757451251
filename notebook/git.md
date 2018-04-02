@@ -1,7 +1,16 @@
+
+=> 開頭要介紹為什麼要用 git 啊！
+
 NPM 的起手式:
+
+=> 建議可以看一下 Markdown 的語法，這樣排版比較清楚
+
+=> 把標題 & 程式碼的部分跟敘述分離
 
 一般都會先執行 NPM init :
       在打入 NPM init 後，會被要求輸入幾個欄位
+
+=> NPM 為什麼要大寫？
 
       package name: 你這個 Project 要叫什麼名字
       version: 你決定這個 Project 現在該是第幾版
@@ -36,6 +45,8 @@ NPM 的起手式:
 
     $ git config --list  /* 查看 git 設定內容 */!
 
+=> config 設定，應該只有第一次才需要
+
     git clone     
 
     clone下來別人的專案到local端
@@ -43,6 +54,8 @@ NPM 的起手式:
     git init  
 
     創建一個新的Repository   (打開任何一個專案資料夾打上git init 會產生一個隱藏的.git資料夾)
+
+=> git clone & git init 應該是擇一就好？
 
     add add   主檔名.副檔名     
 
@@ -53,6 +66,8 @@ NPM 的起手式:
     git commit   -m   '一行解說文字'  
 
     將檔案提交入Repository git commit   -e   能用編輯器撰寫多行解說文字
+
+=> 建議說明一下 untracked/unmodified/modified/staged 的關係
 
     git rm   --cached   檔案名稱 
 
@@ -95,7 +110,9 @@ NPM 的起手式:
     merge: 會有一個切點
     rebase: branch 會直接接在主 branch 之後 
     (網址連接 : https://www.slideshare.net/WillHuangTW/git-merge-rebase)
-    
+
+=> 可以找一張圖說明 merge & rebase 的差別
+
     .gitignore 
     
     //用法可參照 : https://zlargon.gitbooks.io/git-tutorial/content/file/ignore.html
