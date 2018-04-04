@@ -1,105 +1,117 @@
-NPM 的起手式:
+#### 一般都會先執行 npm init:
+   | 打入 npm init 後|會被要求輸入幾個欄位|
+| ------ | ------ |
+| package name |你這個project 要叫什麼名字 |
+| version | 你決定這個 Project 現在應該是第幾版|
+|description|Project 基本介紹|
+   |   entry point| 進入點，如果要跑你的 Project 應該要執行哪個檔案|
+ |     author| 作者(自己)|
+ |     license|你這個 Project 是採用什麼授權的|
+  |    test command| 這個不太重要，待會會說明|
 
-一般都會先執行 NPM init :
-      在打入 NPM init 後，會被要求輸入幾個欄位
+##### 基本上結束後，你可以看到這個資料夾底下，新增了一個 Package.json
+(也是可以用 npm init -y 她會把預設選項全部空白)
+>接著一般就會安裝自己會用到的package:
+ex. npm install requests
+就會產生: node_module
+這個資料夾(requests所需的檔案) ， 同時再 package.json 裡面添加關於 requests 的版本
 
-      package name: 你這個 Project 要叫什麼名字
-      version: 你決定這個 Project 現在該是第幾版
-      description: Project 基本介紹
-      entry point: 進入點，如果要跑你的 Project 應該要執行哪個檔案
-      author: 作者(自己)
-      license: 你這個 Project 是採用什麼授權的
-      test command: 這個不太重要，待會會說明
+### Git 基本操作
+(git 新手教學
+https://hellolynn.hpd.io/2017/01/18/git新手入門教學-part-1/)
 
-      基本上結束後，你可以看到這個資料夾底下，新增了一個 Package.json
-      (也是可以用 npm init -y 她會把預設選項全部空白)
-      
- 接著一般就會安裝自己會用到的package: ex. npm install requests
-     就會產生: node_module 這個資料夾(requests所需的檔案) ， 同時再 package.json 裡面添加關於 requests 的版本
-     
-     
-     
- Git 基本操作:
-   
-    $ touch hello.txt 可以在當前目錄下添加檔案
+在當前目錄下添加檔案
+```sh
+$ touch hello.txt 
+```
+Step:
+確認是否有安裝 git
+```sh
+$ git --version 
+```
 
-    git 新手教學
-    https://hellolynn.hpd.io/2017/01/18/git新手入門教學-part-1/
-    
-    Step:
+git config: (第一次使用時)
+```sh
+$ git config --global user.name "alex"
+$ git config --global user.email "alex@gmail.com"
+$ git config --list   查看 git 設定內容 
+```
 
-    $ git --version /* 確認是否有安裝 git */
-    告訴 git 使用者資訊
+clone 別人的專案到 local 端
+```sh
+$ git clone
+```
+### or 
 
-    $ git config --global user.name "alex"
-    $ git config --global user.email  "alex@gmail.com"
+ 創建一個新的Repository 
+ (打開任何一個專案資料夾打上git init 會產生一個隱藏的.git資料夾)
+ ```sh
+$ git init
+```
+>將檔案提交入Staging Area 
+>git add . 把所有更改過的東西都 add 到 Staging area
+ ```sh
+$ git add 主檔名.副檔名
+```
 
-    $ git config --list  /* 查看 git 設定內容 */!
+將檔案提交入Repository 
+ ```sh
+$  git commit -m  '一行解說文字'  
+```
+ 
+將已經在Repository的檔案移出Staging Area
+ ```sh
+$  git reset HEAD 
+```
 
-    git clone     
+查看目前檔案的狀態
+ ```sh
+$ git status
+```
 
-    clone下來別人的專案到local端
+查看目前所有commit的歷史紀錄
+ ```sh
+$ git log
+```
 
-    git init  
+比較文件或commit間修改的差異
+ ```sh
+$ git diff 
+```
 
-    創建一個新的Repository   (打開任何一個專案資料夾打上git init 會產生一個隱藏的.git資料夾)
+詳細列出該次commit的修改內容
+ ```sh
+$ git show 
+```
 
-    add add   主檔名.副檔名     
+暫存用
+ ```sh
+$ git stash [apply/pop/list]
+```
 
-    將檔案提交入Staging Areagit add   整個資料夾提交入Staging Area
-    
-    (git add . 把所有更改過的東西都儲存起來)
+1.merge (初期比較常用)
+>若出現衝突，只需要修改一次
+    將最新的修改內容和___做比對
+    無論前面做了什麼，只做兩個分支之間最新    的記錄的比對
 
-    git commit   -m   '一行解說文字'  
+2.rebase
+>不管做了什麼，只要做rebase，就會一次又一次做打招呼動作
 
-    將檔案提交入Repository git commit   -e   能用編輯器撰寫多行解說文字
-
-    git rm   --cached   檔案名稱 
-
-    將不在Repository的檔案移出Staging Area
-
-    git reset HEAD 
-
-    將已經在Repository的檔案移出Staging Area
-
-    git status
-
-    查看目前檔案的狀態
-
-    git log
-
-    查看目前所有commit的歷史紀錄
-
-    git diff 
-
-    比較文件或commit間修改的差異
-
-    git show 
-
-    詳細列出該次commit的修改內容
-
-    git stash [apply/pop/list]
-    
-    暫存用
-    
-    git checkout (-b) 'abc'
-    
-    新增新的分支(下 -b 可以新增的同時並且切換)
-    (git checkout 也可以取消文件的修改 ex. git checkout read,md )
-    
-    git merge develop (截一次跟別人之間有衝突的地方)
-    不管兩個之間做了什麼只做了最新紀錄的比對
-    
-    不管你做了什麼 只要做 rebase 的時候 就做一次做一次打招呼的動作問有你有沒有更新
-    差異:
+差異:
     merge: 會有一個切點
     rebase: branch 會直接接在主 branch 之後 
-    (網址連接 : https://www.slideshare.net/WillHuangTW/git-merge-rebase)
     
-    .gitignore 
-    
-    //用法可參照 : https://zlargon.gitbooks.io/git-tutorial/content/file/ignore.html
-    
-    
-    
- 
+![](https://i.imgur.com/xzeZAYS.png)
+
+.gitignore 
+     
+     用法可參照 : https://zlargon.gitbooks.io/git-tutorial/content/file/ignore.html
+
+### 檔案在git的旅程
+![](http://wiki.csie.ncku.edu.tw/git_file_status.PNG)
+
+> * untracked：檔案一開始都在這個狀態。
+> * unmodified：經由指令將untracked的檔案加入追蹤，或是，staged狀態的檔案經由commit，會到這個狀態。另外在這狀態的檔案可以藉由指令來取消追蹤。
+> * modified：檔案只要有改變就會到這個狀態，無論是在unmodified或是staged狀態。藉由指令可以放棄這些變更，回到之前的狀態。
+> * staged：在這個狀態的檔案，通常就是要準備要提交到新的版本中了。在此狀態的檔案一經過更改就會回到modified狀態。
+
