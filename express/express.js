@@ -17,6 +17,14 @@ app.get('/about',function(req,res){
 });
 
 
+app.get('/KPOPN',function(req,res){
+    res.render('KPOPN')
+});
+
+app.get('/WORKOUT',function(req,res){
+    res.render('WORKOUT')
+});
+
 
 
 
